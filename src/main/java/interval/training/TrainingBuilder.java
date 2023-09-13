@@ -1,4 +1,4 @@
-package org.example;
+package interval.training;
 
 public class TrainingBuilder {
 

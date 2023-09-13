@@ -1,12 +1,12 @@
-package org.example;
+package interval.training;
+
+import interval.training.models.Cycle;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Training {
     private int numberOfSeries;
 
-    //TODO to thing, use like this or make one map <numberOfCycle, Cycle>
     private HashMap<Integer, Cycle> cycleMap;
 
     private int lenghtOfPreWorkout;
@@ -15,12 +15,18 @@ public class Training {
     private int lenghtOfWorkout;
     private int lenghtOfBreak;
     private int delay;
+
     public Training(int numberOfSeries, int lenghtOfWorkout, int lenghtOfBreak,
-    int lenghtOfPreWorkout, int lenghtOfCoolDown, int delay) {
+                    int lenghtOfPreWorkout, int lenghtOfCoolDown, int delay) {
         this.numberOfSeries = numberOfSeries;
         this.lenghtOfPreWorkout = lenghtOfPreWorkout;
         this.lenghtOfCoolDown = lenghtOfCoolDown;
         this.delay = delay;
+        fillCycleMap();
+    }
+
+    public Cycle getCycle(int key){
+        return this.cycleMap.get(key);
     }
 
     public void fillCycleMap() {

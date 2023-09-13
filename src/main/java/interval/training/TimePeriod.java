@@ -1,4 +1,4 @@
-package org.example;
+package interval.training;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -8,10 +8,17 @@ public class TimePeriod {
     private long timeInSec;
 
     private boolean isEndOfPeriod;
+
+    private boolean isPeriodStarder;
+
     public TimePeriod(long timeInSec) {
         this.timeInSec = timeInSec;
         this.isEndOfPeriod = false;
-        timer.scheduleAtFixedRate(setTimer(), 0, 1000);
+        timer.scheduleAtFixedRate(runTimer(), 0, 1000);
+    }
+
+    public boolean isPeriodEnd(){
+        return isEndOfPeriod;
     }
 
     public long getTimeInSec() {
@@ -25,7 +32,8 @@ public class TimePeriod {
         this.isEndOfPeriod = true;
     }
 
-    public TimerTask setTimer(){
+    public TimerTask runTimer(){
+        this.isPeriodStarder = true;
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
@@ -40,6 +48,8 @@ public class TimePeriod {
         };
         return timerTask;
     }
-
+    public boolean isPeriodStart(){
+        return this.isPeriodStarder;
+    }
 
 }

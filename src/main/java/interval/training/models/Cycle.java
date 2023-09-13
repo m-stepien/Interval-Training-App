@@ -1,6 +1,6 @@
-package org.example;
+package interval.training.models;
 
-import java.util.List;
+import interval.training.TimePeriod;
 
 public class Cycle {
     private TimePeriod workoutTime;
@@ -25,5 +25,20 @@ public class Cycle {
 
     public void setBreakTime(TimePeriod breakTime) {
         this.breakTime = breakTime;
+    }
+
+    public void startWorkout(){
+        this.getWorkoutTime().runTimer();
+    }
+    public void startBreak(){
+        this.getBreakTime().runTimer();
+    }
+
+    public boolean isWorkoutEnd(){
+        return this.workoutTime.isPeriodEnd();
+    }
+
+    public boolean isBreakEnd(){
+        return this.workoutTime.isPeriodEnd();
     }
 }

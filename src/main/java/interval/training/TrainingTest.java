@@ -1,4 +1,4 @@
-package org.example;
+package interval.training;
 
 import org.junit.jupiter.api.Test;
 
