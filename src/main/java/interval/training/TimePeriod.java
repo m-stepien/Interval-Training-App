@@ -14,7 +14,13 @@ public class TimePeriod {
     public TimePeriod(long timeInSec) {
         this.timeInSec = timeInSec;
         this.isEndOfPeriod = false;
+        this.isPeriodStarder = false;
+    }
+
+    public void startTimePeriod(){
         timer.scheduleAtFixedRate(runTimer(), 0, 1000);
+        this.isPeriodStarder = true;
+
     }
 
     public boolean isPeriodEnd(){

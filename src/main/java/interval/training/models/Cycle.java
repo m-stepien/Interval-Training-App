@@ -28,17 +28,21 @@ public class Cycle {
     }
 
     public void startWorkout(){
-        this.getWorkoutTime().runTimer();
+        this.getWorkoutTime().startTimePeriod();
     }
     public void startBreak(){
-        this.getBreakTime().runTimer();
+        this.getBreakTime().startTimePeriod();
     }
 
     public boolean isWorkoutEnd(){
         return this.workoutTime.isPeriodEnd();
     }
 
+    public boolean cycleEnd(){
+        return this.isBreakEnd() && this.isWorkoutEnd();
+    }
+
     public boolean isBreakEnd(){
-        return this.workoutTime.isPeriodEnd();
+        return this.breakTime.isPeriodEnd();
     }
 }

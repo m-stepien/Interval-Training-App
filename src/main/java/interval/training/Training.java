@@ -21,6 +21,7 @@ public class Training {
         this.numberOfSeries = numberOfSeries;
         this.lenghtOfPreWorkout = lenghtOfPreWorkout;
         this.lenghtOfCoolDown = lenghtOfCoolDown;
+        this.cycleMap = new HashMap<Integer, Cycle>();
         this.delay = delay;
         fillCycleMap();
     }
@@ -34,4 +35,5 @@ public class Training {
             this.cycleMap.put(i, new Cycle(this.lenghtOfWorkout, this.lenghtOfBreak));
         }
     }
+
 }
