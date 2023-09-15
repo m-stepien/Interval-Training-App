@@ -2,7 +2,7 @@ package interval.training;
 
 import interval.training.models.Time;
 
-public class TerminalIO implements IOInterface{
+public class TerminalIO implements IOInterface {
 
     @Override
     public void showStart() {

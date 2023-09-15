@@ -22,7 +22,7 @@ public class Time {
         this.seconds = seconds;
     }
 
-    public String toString(){
-        return String.join( ":", Integer.valueOf(minutes).toString(), Integer.valueOf(seconds).toString());
+    public String toString() {
+        return String.join(":", Integer.valueOf(minutes).toString(), Integer.valueOf(seconds).toString());
     }
 }

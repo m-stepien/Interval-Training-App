@@ -26,7 +26,7 @@ public class Training {
         fillCycleMap();
     }
 
-    public Cycle getCycle(int key){
+    public Cycle getCycle(int key) {
         return this.cycleMap.get(key);
     }
 

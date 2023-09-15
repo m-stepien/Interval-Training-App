@@ -17,13 +17,13 @@ public class TimePeriod {
         this.isPeriodStarder = false;
     }
 
-    public void startTimePeriod(){
+    public void startTimePeriod() {
         timer.scheduleAtFixedRate(runTimer(), 0, 1000);
         this.isPeriodStarder = true;
 
     }
 
-    public boolean isPeriodEnd(){
+    public boolean isPeriodEnd() {
         return isEndOfPeriod;
     }
 
@@ -34,27 +34,30 @@ public class TimePeriod {
     public void setTimeInSec(long timeInSec) {
         this.timeInSec = timeInSec;
     }
-    public void setToDone(){
+
+    public void setToDone() {
         this.isEndOfPeriod = true;
     }
 
-    public TimerTask runTimer(){
+    public TimerTask runTimer() {
         this.isPeriodStarder = true;
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                setTimeInSec(getTimeInSec()-1);
+                setTimeInSec(getTimeInSec() - 1);
                 System.out.println(getTimeInSec());
-                if(getTimeInSec()==0){
-                    this.cancel();
+                if (getTimeInSec() == 0) {
                     setToDone();
+                    this.cancel();
+
                 }
             }
 
         };
         return timerTask;
     }
-    public boolean isPeriodStart(){
+
+    public boolean isPeriodStart() {
         return this.isPeriodStarder;
     }
 
