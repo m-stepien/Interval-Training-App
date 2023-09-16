@@ -11,16 +11,17 @@ public class CycleManager {
 
     public void startCycle() {
         this.cycle.startWorkout();
-
-        while (!this.cycle.isWorkoutEnd() || !this.cycle.isBreakEnd()) {
-            if (this.cycle.isWorkoutEnd() && !this.cycle.getBreakTime().isPeriodStart()) {
-                System.out.println("wcho");
-                this.cycle.startBreak();
-            }
-            if (cycle.cycleEnd()) {
-                System.out.println("koniec");
-            }
+        while (!this.cycle.getWorkoutTime().isPeriodEnd()){
+            //willsynchronize becaouse of sout
+            System.out.println("helo");
         }
+
+        this.cycle.startBreak();
+
+        while(!this.cycle.isBreakEnd()){
+            //will not synchronize
+        };
+        System.out.println("wykonana calość");
 
     }
 }

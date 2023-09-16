@@ -3,13 +3,22 @@ package interval.training;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TimePeriod {
+public class TimePeriod extends Thread{
     Timer timer = new Timer();
     private long timeInSec;
 
     private boolean isEndOfPeriod;
 
     private boolean isPeriodStarder;
+    private TimerTask timerTask;
+
+    public TimerTask getTimerTask() {
+        return timerTask;
+    }
+
+    public void setTimerTask(TimerTask timerTask) {
+        this.timerTask = timerTask;
+    }
 
     public TimePeriod(long timeInSec) {
         this.timeInSec = timeInSec;
@@ -18,8 +27,8 @@ public class TimePeriod {
     }
 
     public void startTimePeriod() {
-        timer.scheduleAtFixedRate(runTimer(), 0, 1000);
         this.isPeriodStarder = true;
+        timer.scheduleAtFixedRate(runTimer(), 0, 1000);
 
     }
 
@@ -44,16 +53,16 @@ public class TimePeriod {
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                setTimeInSec(getTimeInSec() - 1);
-                System.out.println(getTimeInSec());
-                if (getTimeInSec() == 0) {
+                if(getTimeInSec()==0){
                     setToDone();
                     this.cancel();
-
                 }
+                System.out.println(getTimeInSec());
+                setTimeInSec(getTimeInSec() - 1);
             }
 
         };
+        this.timerTask = timerTask;
         return timerTask;
     }
 
