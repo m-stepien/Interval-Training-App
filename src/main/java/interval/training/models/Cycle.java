@@ -26,22 +26,12 @@ public class Cycle {
     }
 
     public void startWorkout() {
-        this.getWorkoutTime().startTimePeriod();
+        Thread thread = new Thread(this.getWorkoutTime());
+        thread.start();
     }
 
     public void startBreak() {
-        this.getBreakTime().startTimePeriod();
+        this.getBreakTime().run();
     }
 
-    public boolean isWorkoutEnd() {
-        return this.workoutTime.isPeriodEnd();
-    }
-
-    public boolean cycleEnd() {
-        return this.isBreakEnd() && this.isWorkoutEnd();
-    }
-
-    public boolean isBreakEnd() {
-        return this.breakTime.isPeriodEnd();
-    }
 }

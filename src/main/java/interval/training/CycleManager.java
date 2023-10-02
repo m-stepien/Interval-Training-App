@@ -2,25 +2,16 @@ package interval.training;
 
 import interval.training.models.Cycle;
 
-public class CycleManager {
-    private Cycle cycle;
+import java.util.List;
 
-    public CycleManager(Cycle cycle) {
-        this.cycle = cycle;
+public class CycleManager {
+    private List<Cycle> cycleList;
+    //builder najprawdppodpbniej sie tu sprawdzo
+    public CycleManager(List<Cycle> cycle) {
+        this.cycleList = cycle;
     }
 
-    public void startCycle() {
-        this.cycle.startWorkout();
-
-        while (!this.cycle.isWorkoutEnd() || !this.cycle.isBreakEnd()) {
-            if (this.cycle.isWorkoutEnd() && !this.cycle.getBreakTime().isPeriodStart()) {
-                System.out.println("wcho");
-                this.cycle.startBreak();
-            }
-            if (cycle.cycleEnd()) {
-                System.out.println("koniec");
-            }
-        }
-
+    public void startCycle(int i) {
+        this.cycleList.get(i).startWorkout();
     }
 }
