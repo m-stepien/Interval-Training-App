@@ -1,27 +1,29 @@
 package interval.training.models;
 
+import interval.training.TimePeriod;
+
 public class Cycle {
-    private TrainingTimer workoutTime;
-    private TrainingTimer breakTime;
+    private TimePeriod workoutTime;
+    private TimePeriod breakTime;
 
     public Cycle(long workoutTime, long breakTime) {
-        this.workoutTime = new TrainingTimer(workoutTime);
-        this.breakTime = new TrainingTimer(breakTime);
+        this.workoutTime = new TimePeriod(workoutTime);
+        this.breakTime = new TimePeriod(breakTime);
     }
 
-    public TrainingTimer getWorkoutTime() {
+    public TimePeriod getWorkoutTime() {
         return workoutTime;
     }
 
-    public void setWorkoutTime(TrainingTimer workoutTime) {
+    public void setWorkoutTime(TimePeriod workoutTime) {
         this.workoutTime = workoutTime;
     }
 
-    public TrainingTimer getBreakTime() {
+    public TimePeriod getBreakTime() {
         return breakTime;
     }
 
-    public void setBreakTime(TrainingTimer breakTime) {
+    public void setBreakTime(TimePeriod breakTime) {
         this.breakTime = breakTime;
     }
 

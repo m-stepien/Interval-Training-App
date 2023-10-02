@@ -1,10 +1,10 @@
 package interval.training;
 
-import interval.training.models.TrainingTimer;
+import interval.training.models.Time;
 
 public interface IOInterface {
 
-    public abstract void showTIme(TrainingTimer trainingTimer);
+    public abstract void showTIme(Time time);
 
     public abstract void showStart();
 
