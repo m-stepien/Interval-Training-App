@@ -1,6 +1,6 @@
 package interval.training;
 
-import interval.training.models.Time;
+import interval.training.models.TrainingTimer;
 
 public class TerminalIO implements IOInterface {
 
@@ -10,8 +10,8 @@ public class TerminalIO implements IOInterface {
     }
 
     @Override
-    public void showTIme(Time time) {
-        System.out.println(time);
+    public void showTIme(TrainingTimer trainingTimer) {
+        System.out.println(trainingTimer);
     }
 
     @Override
